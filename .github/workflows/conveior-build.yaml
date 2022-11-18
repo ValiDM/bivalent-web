@@ -16,7 +16,7 @@ jobs:
 
       - name: build
         run: |
-          VERSION=$(git describe | awk -F '-' '{print $1}')
+          VERSION=${GITHUB_SHA}
           docker login registry.hub.docker.com -u "${{ secrets.DOCKER_HUB_USERNAME }}" -p "${{ secrets.DOCKER_HUB_PASSWORD }}"
           docker-compose -f ./conveior-image/compose-build.yaml build --pull
           docker tag conveior-image_conveior:latest registry.hub.docker.com/lukaspastva/conveior:latest
