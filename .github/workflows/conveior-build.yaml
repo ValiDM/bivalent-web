@@ -19,9 +19,9 @@ jobs:
           VERSION=${GITHUB_SHA}
           docker login registry.hub.docker.com -u "${{ secrets.DOCKER_HUB_USERNAME }}" -p "${{ secrets.DOCKER_HUB_PASSWORD }}"
           docker-compose -f ./conveior-image/compose-build.yaml build --pull
-          docker tag conveior-image_conveior:latest registry.hub.docker.com/lukaspastva/conveior:latest
-          docker tag conveior-image_conveior:latest registry.hub.docker.com/lukaspastva/conveior:${VERSION}
-          docker push registry.hub.docker.com/lukaspastva/conveior:latest
-          docker push registry.hub.docker.com/lukaspastva/conveior:${VERSION}
+          docker tag conveior-image_conveior:latest registry.hub.docker.com/validm/bivalent-web:latest
+          docker tag conveior-image_conveior:latest registry.hub.docker.com/validm/bivalent-web:${VERSION}
+          docker push registry.hub.docker.com/validm/bivalent-web:latest
+          docker push registry.hub.docker.com/validm/bivalent-web:${VERSION}
 
         
