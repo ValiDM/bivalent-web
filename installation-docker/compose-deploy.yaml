@@ -5,3 +5,6 @@ services:
   bivalent-web:
     container_name: "bivalent-web"
     image: "validm/bivalent-web:latest"
+    ports: 
+      - 80:8000
+      - 443:8000
